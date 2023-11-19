@@ -3,13 +3,16 @@ package com.example.borutoapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.borutoapp.navigation.SetupNavGraph
 import com.example.borutoapp.ui.theme.BorutoAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+
 //Dagger Hilt Library knows with this annotation where to inject the dependencies provided by the programmer
+@OptIn(ExperimentalFoundationApi::class)
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 

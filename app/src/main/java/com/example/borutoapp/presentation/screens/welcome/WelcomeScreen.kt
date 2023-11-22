@@ -25,9 +25,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import com.example.borutoapp.R
 import com.example.borutoapp.domain.model.OnBoardingPage
+import com.example.borutoapp.presentation.components.HorizontalPagerIndicator
 import com.example.borutoapp.ui.theme.EXTRA_LARGE_PADDING
+import com.example.borutoapp.ui.theme.PAGING_INDICATOR_SPACING
+import com.example.borutoapp.ui.theme.PAGING_INDICATOR_WIDTH
 import com.example.borutoapp.ui.theme.SMALL_PADDING
+import com.example.borutoapp.ui.theme.activeIndicatorColor
 import com.example.borutoapp.ui.theme.descriptionColor
+import com.example.borutoapp.ui.theme.inactiveIndicatorColor
 import com.example.borutoapp.ui.theme.titleColor
 import com.example.borutoapp.ui.theme.welcomeScreenBackgroundColor
 import com.example.borutoapp.util.Constants
@@ -50,12 +55,22 @@ fun WelcomeScreen(navController: NavHostController) {
         .background(color = MaterialTheme.colors.welcomeScreenBackgroundColor)
     ) {
        HorizontalPager(
+           modifier = Modifier.weight(10f),
            state = pagerState,
            verticalAlignment = Alignment.Top
-       ) {
-           position ->
+       ) {position ->
            PagerScreen(onBoardingPage = pages[position])
        }
+        HorizontalPagerIndicator(
+            modifier = Modifier.weight(1f)
+                .align(Alignment.CenterHorizontally),
+            pagerState = pagerState ,
+            activeColor = MaterialTheme.colors.activeIndicatorColor,
+            inactiveColor = MaterialTheme.colors.inactiveIndicatorColor,
+            indicatorWidth = PAGING_INDICATOR_WIDTH,
+            spacing = PAGING_INDICATOR_SPACING,
+            pageCount = pagerState.pageCount
+            )
     }
 
 }

@@ -32,4 +32,10 @@ val Colors.activeIndicatorColor
     get() = if (isLight) Purple500 else Purple700
 
 val Colors.inactiveIndicatorColor
+    @Composable
     get() = if (isLight) LightGray else DarkGray
+
+
+val Colors.buttonBackgroundColor
+    @Composable
+    get() = if (isLight) Purple500 else Purple700

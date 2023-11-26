@@ -44,6 +44,7 @@ import com.example.borutoapp.ui.theme.inactiveIndicatorColor
 import com.example.borutoapp.ui.theme.titleColor
 import com.example.borutoapp.ui.theme.welcomeScreenBackgroundColor
 import com.example.borutoapp.util.Constants
+import com.example.borutoapp.util.Constants.LAST_ON_BOARDING_PAGE
 import com.example.borutoapp.util.Constants.ON_BOARDING_PAGE_COUNT
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -141,7 +142,7 @@ fun FinishButton(
     ){
         AnimatedVisibility(
             modifier = Modifier.fillMaxWidth(),
-            visible = pagerState.currentPage == 2
+            visible = pagerState.currentPage == LAST_ON_BOARDING_PAGE
         ) {
             Button(onClick = onClick,
             colors = ButtonDefaults.buttonColors(

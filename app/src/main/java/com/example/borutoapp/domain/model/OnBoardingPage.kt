@@ -6,7 +6,7 @@ import com.example.borutoapp.R
 sealed class OnBoardingPage(
     @DrawableRes
     val image: Int,
-    val title: String,
+    var title: String,
     val description: String
 ) {
     object First: OnBoardingPage(
